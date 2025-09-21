@@ -6,17 +6,13 @@
 #    By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/15 19:34:50 by yoda              #+#    #+#              #
-#    Updated: 2025/09/21 12:28:34 by pjolidon         ###   ########.fr        #
+#    Updated: 2025/09/21 14:16:12 by pjolidon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	now_its_weird
+NAME		=	polymorphism
 
-SRC			=	main.cpp \
-				ClapTrap.cpp \
-				ScavTrap.cpp \
-				FragTrap.cpp \
-				DiamondTrap.cpp
+SRC			=	main.cpp
 
 SRCDIR		=	./
 OBJDIR		=	./
