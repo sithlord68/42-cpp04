@@ -1,44 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/21 14:27:46 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 18:53:01 by pjolidon         ###   ########.fr       */
+/*   Created: 2025/09/21 18:51:58 by pjolidon          #+#    #+#             */
+/*   Updated: 2025/09/21 19:05:53 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	DOG_HPP
-# define DOG_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+#ifndef	BRAIN_HPP
+# define BRAIN_HPP
+
+# ifndef BRNDBG
+#  define BRNDBG 1
+# endif
+
 # include <iostream>
 # include <string>
 # include <sstream>
 
-# ifndef DOGDBG
-#  define DOGDBG 1
-# endif
-
-class Dog: virtual public Animal
+class Brain:
 {
+
 	public:
 
-		Dog( void );							// canon default constructor
-		~Dog( void );							// canon destructor
+		Brain( void );							// canon default constructor
+		~Brain( void );							// canon destructor
 
-		Dog( const Dog & dog );					// canon constructor by copy
-		void		makeSound( void ) const;
+		Brain( const Brain & ct );				// canon copy constructor
+		Brain & operator=( const Brain & ct );	// canon operator =
+
+	protected:
+
+		std::string	_ideas[100];
 
 	private:
-	
-		static void	DogDebug( std::string output, int level );
-
+		void	brainDebug( std::string str, int level );
 };
 
-std::ostream &	operator<<(std::ostream & ssOutput, Dog const & object );
+std::ostream & operator<<(std::ostream & o, const Brain & object );
 
 #endif

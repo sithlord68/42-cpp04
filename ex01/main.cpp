@@ -6,14 +6,13 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:21:39 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 18:24:39 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 18:54:19 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Unicorn.hpp"
-#include "WrongCat.hpp"
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -48,14 +47,6 @@ int	main ( void )
 	j->makeSound();
 	std::cout << "TEST ANIMAL ";
 	meta->makeSound();
-	std::cout << "################## WRONG CAT #################" << std::endl;
-	const WrongAnimal* wmeta = new WrongAnimal();
-	const WrongAnimal* wi = new WrongCat();
-	std::cout << "TEST CHAT " << wi->getType() << " " << std::endl;
-	std::cout << "TEST CHAT ";
-	wi->makeSound();
-	std::cout << "TEST ANIMAL ";
-	wmeta->makeSound();
 	myTests();
 	return 0;
 }
