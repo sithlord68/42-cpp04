@@ -6,7 +6,7 @@
 #    By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/15 19:34:50 by yoda              #+#    #+#              #
-#    Updated: 2025/09/21 17:35:32 by pjolidon         ###   ########.fr        #
+#    Updated: 2025/09/21 18:20:05 by pjolidon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ SRC			=	main.cpp \
 				Animal.cpp \
 				Dog.cpp \
 				Cat.cpp \
-				Unicorn.cpp
+				Unicorn.cpp \
+				WrongAnimal.cpp \
+				WrongCat.cpp
 
 SRCDIR		=	./
 OBJDIR		=	./
@@ -103,7 +105,8 @@ prender:	fclean
 		git commit -m "${DATE} - make render"
 
 ask:	fclean
-	@cat *hpp > ask.txt	
+	@cat Makefile > ask.txt
+	@cat *hpp >> ask.txt	
 	@cat *cpp >> ask.txt	
 
 .PHONY:		all clean fclean re push pushend render repos ppush ppushend prender ask
