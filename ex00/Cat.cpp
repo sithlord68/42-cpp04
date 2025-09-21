@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:35:27 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 17:40:53 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 17:44:46 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 Cat::Cat( void ): Animal()
 {
 	this->setType("Cat");
-	this->setSound("maiaule");
+	this->setSound("meow");
 	CatDebug("Cat default constructor called", 1);
 	return;
 }

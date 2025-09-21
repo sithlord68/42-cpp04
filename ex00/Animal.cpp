@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:24:44 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 17:42:58 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 17:44:02 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,6 @@ std::string	Animal::getSound( void ) const
 
 void	Animal::makeSound( void ) const
 {
-	std::cout << "[" << this->getType << "]" << this->getSound() << std::endl;
+	std::cout << "[" << this->getType() << "]" << this->getSound() << std::endl;
 	return;
 }
