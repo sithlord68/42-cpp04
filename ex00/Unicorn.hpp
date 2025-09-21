@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Unicorn.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:27:46 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 17:36:00 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 17:35:54 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	DOG_HPP
-# define DOG_HPP
+#ifndef	UNICORN_HPP
+# define UNICORN_HPP
 
 # include "Animal.hpp"
 # include <iostream>
 # include <string>
 # include <sstream>
 
-# ifndef DOGDBG
-#  define DOGDBG 1
+# ifndef UNICORNDBG
+#  define UNICORNDBG 1
 # endif
 
-class Dog: virtual public Animal
+class Unicorn: virtual public Animal
 {
 	public:
 
-	Dog( void );							// canon default constructor
-	~Dog( void );							// canon destructor
+	Unicorn( void );							// canon default constructor
+	~Unicorn( void );							// canon destructor
 
-	Dog( const Dog & dog );					// canon constructor by copy
+	Unicorn( const Unicorn & Unicorn );			// canon constructor by copy
 
 	private:
 	
-		static void	DogDebug( std::string output, int level );
+		static void	UnicornDebug( std::string output, int level );
 
 };
 
-std::ostream &	operator<<(std::ostream & ssOutput, Dog const & object );
+std::ostream &	operator<<(std::ostream & ssOutput, Unicorn const & object );
 
 #endif

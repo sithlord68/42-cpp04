@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:27:46 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 14:46:01 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 17:35:57 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Cat: virtual public Animal
 	Cat( void );							// canon default constructor
 	~Cat( void );							// canon destructor
 
-	Cat( const Cat & Cat );					// canon constructor by copy
+	Cat( const Cat & cat );					// canon constructor by copy
 
 	private:
 	

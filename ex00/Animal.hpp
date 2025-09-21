@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:23:13 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 14:27:06 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 17:35:34 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,15 @@ class Animal
 		Animal	& operator=( Animal const & rhs );		// canon operateur =
 
 		std::string getType( void ) const;
+		void		setType( std::string type );
+		std::string getSound( void ) const;
+		void		setSound( std::string sound );
+		void		makeSound() const;
 
 	protected:
 
-		std::string	type;
+		std::string	_type;
+		std::string	_sound;
 
 	private:
 	

@@ -1,50 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Unicorn.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:35:27 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 17:40:53 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 17:41:18 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Unicorn.hpp"
 #include <iostream>
 #include <string>
 #include <sstream>
 
-Cat::Cat( void ): Animal()
+Unicorn::Unicorn( void ): Animal()
 {
-	this->setType("Cat");
-	this->setSound("maiaule");
-	CatDebug("Cat default constructor called", 1);
+	this->setType("Unicorn");
+	this->setSound("whinny");
+	UnicornDebug("Unicorn default constructor called", 1);
 	return;
 }
 
-Cat::~Cat( void )
+Unicorn::~Unicorn( void )
 {
-	CatDebug("Cat destroyer called", 1);
+	UnicornDebug("Unicorn destroyer called", 1);
 	return;
 }
 
-Cat::Cat( const Cat & cat ): Animal(cat)
+Unicorn::Unicorn( const Unicorn & unicorn ): Animal(unicorn)
 {
-	this->setType(cat.getType());
-	this->setSound(cat.getSound());
-	CatDebug("Cat copy constructor called", 1);
+	this->setType(unicorn.getType());
+	this->setSound(unicorn.getSound());
+	UnicornDebug("Unicorn copy constructor called", 1);
 	return;
 }
 
-void	Cat::CatDebug( std::string output, int level )
+void	Unicorn::UnicornDebug( std::string output, int level )
 {
-	if (!CATDBG || level < CATDBG)
+	if (!UNICORNDBG || level < UNICORNDBG)
 		return ;
 	std::clog << output << std::endl;
 }
 
-std::ostream &	operator<<(std::ostream & ssOutput, Cat const & o )
+std::ostream &	operator<<(std::ostream & ssOutput, Unicorn const & o )
 {
 	ssOutput << o.getType();
 	return ssOutput;
