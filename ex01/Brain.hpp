@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 18:51:58 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 19:05:53 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 23:12:01 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ class Brain:
 		Brain( const Brain & ct );				// canon copy constructor
 		Brain & operator=( const Brain & ct );	// canon operator =
 
-	protected:
-
-		std::string	_ideas[100];
+		std::string	ideas[100];
 
 	private:
 		void	brainDebug( std::string str, int level );

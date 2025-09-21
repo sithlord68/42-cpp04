@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:27:46 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 18:53:01 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 23:09:21 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,13 @@ class Dog: virtual public Animal
 
 		Dog( const Dog & dog );					// canon constructor by copy
 		void		makeSound( void ) const;
+		void		setBrain( void );
+		void		getBrain( void );
+		Dog & 		operator=( const Dog & dog );  // canon = operator	
 
 	private:
-	
+
+		Brain		*_brain;
 		static void	DogDebug( std::string output, int level );
 
 };

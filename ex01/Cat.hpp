@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:27:46 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 18:52:44 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 23:09:19 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,13 @@ class Cat: virtual public Animal
 
 		Cat( const Cat & cat );					// canon constructor by copy
 		void		makeSound() const;
+		void		setBrain( void );
+		void		getBrain( void );
+		Cat & 		operator=( const Cat & cat );  // canon = operator	
 
 	private:
-	
+
+		Brain		*_brain;
 		static void	CatDebug( std::string output, int level );
 
 };

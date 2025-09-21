@@ -6,11 +6,11 @@
 #    By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/15 19:34:50 by yoda              #+#    #+#              #
-#    Updated: 2025/09/21 18:53:51 by pjolidon         ###   ########.fr        #
+#    Updated: 2025/09/21 21:41:59 by pjolidon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	polymorphism
+NAME		=	je_ne_veux_pas_bruler_le_monde
 
 SRC			=	main.cpp \
 				Animal.cpp \
