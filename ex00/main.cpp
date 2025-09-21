@@ -6,14 +6,14 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:21:39 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 18:09:04 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/21 18:24:39 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Unicorn.hpp"
-#include "WrongCat.cpp"
+#include "WrongCat.hpp"
 #include <iostream>
 #include <string>
 #include <sstream>
