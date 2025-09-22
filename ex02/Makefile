@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+         #
+#    By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/15 19:34:50 by yoda              #+#    #+#              #
-#    Updated: 2025/09/22 09:34:49 by pjolidon         ###   ########.fr        #
+#    Updated: 2025/09/22 20:33:18 by yoda             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	je_ne_veux_pas_bruler_le_monde
+NAME		=	classe_abstraite
 
 SRC			=	main.cpp \
 				Animal.cpp \
