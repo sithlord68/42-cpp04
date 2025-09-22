@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:35:27 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/22 14:51:55 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/22 17:14:24 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ Dog::Dog( void ):
 {
 	this->setType("Dog");
 	DogDebug("Dog default constructor called", 1);
+	return;
+}
+
+Dog::Dog( const std::string name ):
+	Animal(name),
+	_brain( new Brain ),
+	_sound( "wwwaaaffff")
+{
+	this->setType("Dog");
+	DogDebug("Dog named constructor called", 1);
 	return;
 }
 

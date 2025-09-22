@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:35:27 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/22 14:58:36 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/22 17:13:54 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ Unicorn::Unicorn( void ):
 {
 	this->setType("Unicorn");
 	UnicornDebug("Unicorn default constructor called", 1);
+	return;
+}
+
+Unicorn::Unicorn( const std::string name ):
+	Animal( name ),
+	_brain( new Brain ),
+	_sound( "cristal song")
+{
+	this->setType("Unicorn");
+	UnicornDebug("Unicorn named constructor called", 1);
 	return;
 }
 
