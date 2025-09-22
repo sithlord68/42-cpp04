@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:23:13 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 23:09:15 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/22 13:20:10 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,26 @@ class Animal
 {
 	public:
 
-		Animal( void );									// canon constructeur par defaut
-		virtual	~Animal( void );						// canon destructeur
+		Animal( void );												// canon constructeur par defaut
+		virtual	~Animal( void );									// canon destructeur
 
-		Animal( Animal const & ct );					// canon constructeur par co;pie
+		Animal( Animal const & ct );								// canon constructeur par co;pie
 
-		Animal	& 		operator=( Animal const & rhs );		// canon operateur =
+		Animal	& 			operator=( Animal const & rhs );		// canon operateur =
 
-		std::string 	getType( void ) const;
-		void			setType( std::string type );
-		virtual void	makeSound() const;
-
+		std::string 		getType( void ) const;
+		void				setType( std::string type );
+		virtual void		makeSound( void ) const;
+		virtual void		setSound( std::string sound );
+		virtual std::string	getSound( void ) const;
+		
 	protected:
 
 		std::string	_type;
 
 	private:
-	
+
+		std::string		_sound;
 		static void	AnimalDebug( std::string output, int level );
 
 };

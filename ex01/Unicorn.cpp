@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:35:27 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 23:05:57 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/22 14:58:36 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 Unicorn::Unicorn( void ):
 	Animal(),
-	_brain( new Brain )
+	_brain( new Brain ),
+	_sound( "cristal song")
 {
 	this->setType("Unicorn");
 	UnicornDebug("Unicorn default constructor called", 1);
@@ -31,11 +32,12 @@ Unicorn::~Unicorn( void )
 	return;
 }
 
-Unicorn::Unicorn( const Unicorn & unicorn ):
-	Animal(unicorn),
-	_brain( new Brain ( *unicorn._brain ) )
+Unicorn::Unicorn( const Unicorn & rhs ):
+	Animal( rhs ),
+	_brain( new Brain ( *rhs._brain ) ),
+	_sound( rhs.getSound() )
 {
-	this->setType(unicorn.getType());
+	this->setType(rhs.getType());
 	UnicornDebug("Unicorn copy constructor called", 1);
 	return;
 }
@@ -67,6 +69,16 @@ std::ostream &	operator<<(std::ostream & ssOutput, Unicorn const & o )
 
 void	Unicorn::makeSound( void ) const
 {
-	std::cout << "[" << this->getType() << "]" << "HHHHHIIIIIIiiii...." << std::endl;
+	std::cout << "[" << this->getType() << "]" << this->getSound() << std::endl;
 	return;
+}
+
+void	Unicorn::setSound( std::string sound )
+{
+	this->_sound = sound;
+}
+
+std::string	Unicorn::getSound( void ) const
+{
+	return	this->_sound;
 }

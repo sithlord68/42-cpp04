@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 18:51:00 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/22 09:33:11 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/22 13:03:50 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,26 @@ Brain::~Brain( void )
 	return;
 }
 
-Brain::Brain( const Brain & ct )
+Brain::Brain( const Brain & rhs )
 {
+	int	i = 0;
+	while ( i < 100 )
+	{
+		this->ideas[i]  = rhs.ideas[i];
+		i++;
+	}
 	brainDebug("Brain by copy constructor called", 1);
 	return;
 }
 
-Brain & Brain::operator=( const Brain & brain )
+Brain & Brain::operator=( const Brain & rhs )
 {
-	if ( this != &brain )
+	if ( this != &rhs )
 	{
 		int	i = 0;
 		while ( i < 100 )
 		{
-			this->ideas[i]  = brain.ideas[i]
+			this->ideas[i]  = rhs.ideas[i];
 			i++;
 		}
 	}
@@ -64,4 +70,5 @@ std::ostream & operator<<(std::ostream & o, const Brain & object )
 			o << object.ideas[i];
 		i++;
 	}
+	return o;
 }

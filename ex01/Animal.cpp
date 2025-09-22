@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:24:44 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 18:34:59 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/22 13:26:23 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 #include <string>
 #include <sstream>
 
-Animal::Animal( void ): _type("Animal")
+Animal::Animal( void ):
+	_type("Animal"),
+	_sound("Animal noise")
 {
 	AnimalDebug( "Animal \"" + this->_type + "\" under construction", 9);
 	return ;
@@ -27,16 +29,21 @@ Animal::~Animal ( void )
 	return ;
 }
 
-Animal::Animal( Animal const & ct )
+Animal::Animal( Animal const & rhs ):
+	_type( rhs.getType() ),
+	_sound( rhs.getSound() )
 {
-	this->setType(ct.getType());
-	AnimalDebug( "Animal " + ct._type + " has been constructed", 9);
+	AnimalDebug( "Animal " + rhs.getType() + " has been constructed", 9);
 	return ;
 }
 
 Animal	& Animal::operator=( Animal const & rhs )
 {
-	this->_type = rhs._type;
+	if ( this != &rhs )
+	{
+		this->setType( rhs.getType() );
+		this->setSound( rhs.getSound() );
+	}
 	AnimalDebug( "Animal " + rhs._type + " has been cloned", 9);
 	return *this;
 }
@@ -69,4 +76,14 @@ void	Animal::makeSound( void ) const
 {
 	std::cout << "[" << this->getType() << "]" << "animal language speaking" << std::endl;
 	return;
+}
+
+void	Animal::setSound( std::string sound )
+{
+	this->_sound = sound;
+}
+
+std::string	Animal::getSound( void ) const
+{
+	return	this->_sound;
 }
