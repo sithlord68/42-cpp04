@@ -6,7 +6,7 @@
 #    By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/15 19:34:50 by yoda              #+#    #+#              #
-#    Updated: 2025/09/21 18:20:05 by pjolidon         ###   ########.fr        #
+#    Updated: 2025/09/22 09:40:43 by pjolidon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ OBJS		:=	${addprefix ${OBJDIR}, ${SRC:.c=.o}}
 all:	${NAME}
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 ${NAME}: ${OBJS}
 	${CC} ${FLAGS} ${OBJS} -o ${BIN}

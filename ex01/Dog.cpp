@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:35:27 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 23:07:34 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/22 09:33:57 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ Dog::Dog( void ):
 	_brain( new Brain )
 {
 	this->setType("Dog");
-	DogDebug("Cat default constructor called", 1);
+	DogDebug("Dog default constructor called", 1);
 	return;
 }
 
 Dog::~Dog( void )
 {
 	delete this->_brain;
-	DogDebug("Cat destroyer called", 1);
+	DogDebug("Dog destroyer called", 1);
 	return;
 }
 

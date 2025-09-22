@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 18:51:00 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 23:11:56 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/22 09:33:11 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,12 @@ Brain & Brain::operator=( const Brain & brain )
 {
 	if ( this != &brain )
 	{
-		Brain	newBrain = new Brain ( brain );
-		this->_brain = newBrain;
+		int	i = 0;
+		while ( i < 100 )
+		{
+			this->ideas[i]  = brain.ideas[i]
+			i++;
+		}
 	}
 	return *this;
 }

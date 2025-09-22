@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 18:51:58 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 23:12:01 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/22 09:29:10 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <string>
 # include <sstream>
 
-class Brain:
+class Brain
 {
 
 	public:
