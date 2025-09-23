@@ -6,7 +6,7 @@
 #    By: pascal <pascal@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/15 19:34:50 by yoda              #+#    #+#              #
-#    Updated: 2025/09/23 17:00:11 by pascal           ###   ########.fr        #
+#    Updated: 2025/09/23 18:25:55 by pascal           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME		=	interface_and_recap
 SRC			=	main.cpp \
 				Amateria.cpp \
 				Ice.cpp \
-				Cure.cpp
+				Cure.cpp \
+				ICharacter.cpp \
+				IMateriaSource.cpp
 
 SRCDIR		=	./
 OBJDIR		=	./

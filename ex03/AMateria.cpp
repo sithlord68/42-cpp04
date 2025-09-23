@@ -6,7 +6,10 @@
 /*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:42 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/23 16:53:43 by pascal           ###   ########.fr       */
+/*   Updated: 2025/09/23 18:24:33 by pascal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "IMateriaSource.hpp"
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
