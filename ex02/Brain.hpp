@@ -3,13 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 18:51:58 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/22 09:29:10 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/23 17:06:44 by pascal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <string>
+#include <sstream>
 
 #ifndef	BRAIN_HPP
 # define BRAIN_HPP
@@ -17,10 +20,6 @@
 # ifndef BRNDBG
 #  define BRNDBG 1
 # endif
-
-# include <iostream>
-# include <string>
-# include <sstream>
 
 class Brain
 {

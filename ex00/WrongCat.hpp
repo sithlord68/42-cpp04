@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 18:03:32 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 18:38:03 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/23 17:04:13 by pascal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "WrongAnimal.hpp"
+#include <iostream>
+#include <string>
+#include <sstream>
+
 #ifndef	WRONGCAT_HPP
 # define WRONGCAT_HPP
-
-# include "WrongAnimal.hpp"
-# include <iostream>
-# include <string>
-# include <sstream>
 
 # ifndef WCATDBG
 #  define WCATDBG 1

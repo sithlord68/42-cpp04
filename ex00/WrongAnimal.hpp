@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <string>
+#include <sstream>
+
 #ifndef WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
-
-# include <iostream>
-# include <string>
-# include <sstream>
 
 # ifndef WANIMDBG
 #  define WANIMDBG 1

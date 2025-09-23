@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:27:46 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/22 17:14:51 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/23 17:05:32 by pascal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
+#include "Brain.hpp"
+#include <iostream>
+#include <string>
+#include <sstream>
+
 #ifndef	DOG_HPP
 # define DOG_HPP
-
-# include "Animal.hpp"
-# include "Brain.hpp"
-# include <iostream>
-# include <string>
-# include <sstream>
 
 # ifndef DOGDBG
 #  define DOGDBG 1

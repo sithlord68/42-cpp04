@@ -3,21 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+         #
+#    By: pascal <pascal@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/15 19:34:50 by yoda              #+#    #+#              #
-#    Updated: 2025/09/22 20:33:18 by yoda             ###   ########.fr        #
+#    Updated: 2025/09/23 17:00:11 by pascal           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	classe_abstraite
+NAME		=	interface_and_recap
 
 SRC			=	main.cpp \
-				Animal.cpp \
-				Dog.cpp \
-				Cat.cpp \
-				Unicorn.cpp \
-				Brain.cpp
+				Amateria.cpp \
+				Ice.cpp \
+				Cure.cpp
 
 SRCDIR		=	./
 OBJDIR		=	./

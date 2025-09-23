@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Unicorn.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:27:46 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/21 18:41:52 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/23 17:03:42 by pascal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
+#include <iostream>
+#include <string>
+#include <sstream>
+
 #ifndef	UNICORN_HPP
 # define UNICORN_HPP
-
-# include "Animal.hpp"
-# include <iostream>
-# include <string>
-# include <sstream>
 
 # ifndef UNICORNDBG
 #  define UNICORNDBG 1

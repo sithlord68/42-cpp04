@@ -6,16 +6,17 @@
 /*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:23:13 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/23 11:09:27 by pascal           ###   ########.fr       */
+/*   Updated: 2025/09/23 17:06:32 by pascal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include <iostream>
+#include <string>
+#include <sstream>
+
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
-
-# include <iostream>
-# include <string>
-# include <sstream>
 
 # ifndef ANIMDBG
 #  define ANIMDBG 1
