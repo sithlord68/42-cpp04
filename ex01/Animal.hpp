@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:23:13 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/22 16:36:07 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/23 10:45:32 by pascal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Animal
 		Animal( const std::string name );
 		Animal( Animal const & ct );								// canon constructeur par co;pie
 
-		Animal	& 			operator=( Animal const & rhs );		// canon operateur =
+		Animal	&	operator=( Animal const & rhs );		// canon operateur =
 
 		virtual std::string getType( void ) const;
 		void				setType( std::string type );
