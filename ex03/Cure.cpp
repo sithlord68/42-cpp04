@@ -6,37 +6,37 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:57:16 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 12:15:54 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/26 22:21:18 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure( void ): Amateria( "cure" )
+Cure::Cure( void ): AMateria( "cure" )
 {
 	return;
 }
 
-~Cure::Cure( void )
+Cure::~Cure( void )
 {
 	return;
 }
 
-Cure::Cure( const Cure & rhs ): Amateria("Cure")
+Cure::Cure( const Cure & rhs ): AMateria("Cure")
 {
-// copy du nom et du reste
+	this->_type = rhs.getType();
 	return;
 }
 
 Cure &	Cure::operator=( const Cure & rhs )
 {
-	Amateria("Cure");
-// copy du nom et du reste
+	this->setType( rhs.getType() );
 	return;
 }
 
-virtual Amateria*	clone( void ) const
+AMateria*	Cure::clone( void ) const
 {
-// copy du materia
+	AMateria * newMateria = new Cure();
+	newMateria->setType( this->getType() );
 	return;
 }

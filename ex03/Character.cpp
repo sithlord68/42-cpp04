@@ -6,10 +6,55 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:57:04 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 11:50:53 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/26 21:46:27 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "IMateriaSource.hpp"
-#include "ICharacter.hpp"
+#include "Character.hpp"
 #include "AMateria.hpp"
+
+Character::~Character( void )
+{
+
+}
+
+Character::Character( void )
+{
+
+}
+
+Character::~Character()
+{
+
+}
+
+std::string const &	Character::getName( void )
+{
+
+}
+
+void	Character::equip(AMateria* materia)
+{
+
+}
+
+void	Character::unequip( int idx )
+{
+
+}
+
+void	Character::use( int idx, Character& target )
+{
+
+}
+
+Character::Character( const Character &	rhs )
+{
+
+}
+
+Character &	Character::operator=( const Character & rhs )
+{
+
+}

@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:48 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 12:16:56 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/26 22:14:09 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ class AMateria
 		AMateria &	operator=( const AMateria & rhs );	// canon operator =
 		AMateria( std::string const & type );
 
-		std::string const & getType() const;			//Returns the materia type
+		std::string const & getType( void ) const;		//Returns the materia type
+		void				setType( const std::string type );
 		
-		virtual AMateria* clone() const = 0;			// pure virtual class
+		virtual AMateria*	clone( void ) const = 0;		// pure virtual class
 
-		virtual void use(ICharacter& target);
+		virtual void		use( ICharacter& target );
 
 	protected:
 

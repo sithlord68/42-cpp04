@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:00:18 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 12:14:31 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/26 21:48:47 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ class Ice : public AMateria
 
 	public:
 
-		Ice( void );									// canon default const
-		Ice( const Ice & rhs );							// canon copy const
+		Ice( void );										// canon default const
+		Ice( const Ice & rhs );								// canon copy const
 	
-		virtual	~Ice( void );							// canon dest
+		virtual	~Ice( void );								// canon dest
 
-		Ice &			operator=( const Ice & rhs );	// canon = operator
+		Ice &				operator=( const Ice & rhs );	// canon = operator
 
-		// type Amateria car base class renvoie Amateria
-		virtual Amateria*	clone( void ) const;
+		// type AMateria car base class renvoie AMateria
+		virtual AMateria*	clone( void ) const;
 
 	private:
 

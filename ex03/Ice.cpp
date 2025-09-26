@@ -6,23 +6,23 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:59:23 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 12:15:29 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/26 22:22:12 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice( void ): Amateria( "ice" )
+Ice::Ice( void ): AMateria( "ice" )
 {
 	return;
 }
 
-~Ice::Ice( void )
+Ice::~Ice( void )
 {
 	return;
 }
 
-Ice::Ice( const Ice & rhs ): Amateria("ice")
+Ice::Ice( const Ice & rhs ): AMateria("ice")
 {
 // copy du nom et du reste
 	return;
@@ -30,13 +30,13 @@ Ice::Ice( const Ice & rhs ): Amateria("ice")
 
 Ice &	Ice::operator=( const Ice & rhs )
 {
-	Amateria("ice");
-// copy du nom et du reste
+	this->setType( rhs.getType() );
 	return;
 }
 
-virtual Amateria*	clone( void ) const
+AMateria*	Ice::clone( void ) const
 {
-// copy du materia
+	AMateria * newMateria = new Ice();
+	newMateria->setType( this->getType() );
 	return;
 }

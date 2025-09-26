@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:19 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 11:50:47 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/26 21:57:35 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ class	MateriaSource
 
 	public:
 
-		MateriaSource( void );											// canon default cons
-		virtual ~MateriaSource( void ) {}								// canon destroyer
+		MateriaSource( void );									// canon default cons
+		virtual ~MateriaSource( void );							// canon destroyer
 
-		MateriaSource( const MateriaSource & rhs );					// canon copy by cons
+		MateriaSource( const MateriaSource & rhs );				// canon copy by cons
 		MateriaSource &	operator=( const MateriaSource & rhs );	// canon copy by cons
 
 		virtual void learnMateria(AMateria*) = 0;

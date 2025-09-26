@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:57:10 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 12:14:58 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/26 21:39:16 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Cure : public AMateria
 		Cure &			operator=( const Cure & rhs );	// canon = operator
 
 		// type Amateria car base class renvoie Amateria
-		virtual Amateria*	clone( void ) const;
+		virtual AMateria*	clone( void ) const;
 
 	private:
 
