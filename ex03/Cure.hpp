@@ -3,33 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:57:10 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/23 17:53:01 by pascal           ###   ########.fr       */
+/*   Updated: 2025/09/26 12:14:58 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-#ifndef	CURE_HPP
-# define CURE_HPP
+#ifndef	Cure_HPP
+# define Cure_HPP
 
-class cure : public AMateria
+// tout en virtual pas obligatoire/necessaire, mais best practice
+class Cure : public AMateria
 {
+
 	public:
 
-		cure( void );
-		~cure( void );
+		Cure( void );									// canon default const
+		Cure( const Cure & rhs );							// canon copy const
+	
+		virtual	~Cure( void );							// canon dest
 
-		cure( const cure & rhs );
-		cure &	operator=( const cure & rhs );
+		Cure &			operator=( const Cure & rhs );	// canon = operator
 
-		cure &	clone( void );
+		// type Amateria car base class renvoie Amateria
+		virtual Amateria*	clone( void ) const;
 
 	private:
 
-
 };
+
 
 #endif

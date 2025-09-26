@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/23 18:17:16 by pascal           ###   ########.fr       */
+/*   Updated: 2025/09/26 11:50:41 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	AMateria;
 class	ICharacter
 {
 	public:
-
+    	virtual ~ICharacter() {}
 		ICharacter( void );										// canon def const
 		virtual ~ICharacter() {}								// canon destroyer
 		ICharacter( const ICharacter &	rhs );					// canon copy by const

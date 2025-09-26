@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:19 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 11:50:44 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/26 11:50:47 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include "AMateria.hpp"
 
-#ifndef IMATERIASOURCE_HPP
-# define IMATERIASOURCE_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 class	AMateria;
 
-class	IMateriaSource
+class	MateriaSource
 {
 
 	public:
 
-		IMateriaSource( void );											// canon default cons
-		virtual ~IMateriaSource( void ) {}								// canon destroyer
+		MateriaSource( void );											// canon default cons
+		virtual ~MateriaSource( void ) {}								// canon destroyer
 
-		IMateriaSource( const IMateriaSource & rhs );					// canon copy by cons
-		IMateriaSource &	operator=( const IMateriaSource & rhs );	// canon copy by cons
+		MateriaSource( const MateriaSource & rhs );					// canon copy by cons
+		MateriaSource &	operator=( const MateriaSource & rhs );	// canon copy by cons
 
 		virtual void learnMateria(AMateria*) = 0;
 

@@ -3,30 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:00:18 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/23 17:52:52 by pascal           ###   ########.fr       */
+/*   Updated: 2025/09/26 12:14:31 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef Ice_HPP
+# define Ice_HPP
 
-class ice : public AMateria
+// tout en virtual pas obligatoire/necessaire, mais best practice
+class Ice : public AMateria
 {
 
 	public:
 
-		ice( void );
-		~ice( void );
+		Ice( void );									// canon default const
+		Ice( const Ice & rhs );							// canon copy const
 	
-		ice( const ice & rhs );
-		ice &	operator=( const ice & rhs );
+		virtual	~Ice( void );							// canon dest
 
-		ice &	clone( void );
+		Ice &			operator=( const Ice & rhs );	// canon = operator
+
+		// type Amateria car base class renvoie Amateria
+		virtual Amateria*	clone( void ) const;
 
 	private:
 

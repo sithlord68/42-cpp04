@@ -1,42 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 16:57:16 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 12:15:54 by yoda             ###   ########.fr       */
+/*   Created: 2025/09/23 17:57:04 by pascal            #+#    #+#             */
+/*   Updated: 2025/09/26 11:50:53 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
-
-Cure::Cure( void ): Amateria( "cure" )
-{
-	return;
-}
-
-~Cure::Cure( void )
-{
-	return;
-}
-
-Cure::Cure( const Cure & rhs ): Amateria("Cure")
-{
-// copy du nom et du reste
-	return;
-}
-
-Cure &	Cure::operator=( const Cure & rhs )
-{
-	Amateria("Cure");
-// copy du nom et du reste
-	return;
-}
-
-virtual Amateria*	clone( void ) const
-{
-// copy du materia
-	return;
-}
+#include "IMateriaSource.hpp"
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
