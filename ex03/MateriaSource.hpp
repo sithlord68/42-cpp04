@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:19 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 21:57:35 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/28 11:25:16 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ class	MateriaSource
 		MateriaSource( const MateriaSource & rhs );				// canon copy by cons
 		MateriaSource &	operator=( const MateriaSource & rhs );	// canon copy by cons
 
-		virtual void learnMateria(AMateria*) = 0;
+		virtual void learnMateria(AMateria*);
 
-		virtual AMateria* createMateria(std::string const & type) = 0;
+		virtual AMateria* createMateria(std::string const & type);
 
 	protected:
 

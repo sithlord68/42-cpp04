@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 21:47:15 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/28 11:27:32 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ class	AMateria;
 class	Character: public ICharacter
 {
 	public:
-    	virtual ~Character( void );
+
 		Character( void );										// canon def const
 		virtual ~Character( void );									// canon destroyer
 
-		virtual std::string const &	getName( void );
-		virtual void				equip( AMateria* materia ) = 0;
-		virtual void				unequip( int idx ) = 0;
-		virtual void				use( int idx, Character& target ) = 0;
+		std::string const &	getName( void );
+		void				equip( AMateria* materia );
+		void				unequip( int idx );
+		void				use( int idx, Character& target );
 
 	private:
 
-		std::string					_name;
-		AMateria *					_invent[4];
+		std::string			_name;
+		AMateria *			_invent[4];
 
 		// private pour empecher copie du character
 		Character( const Character &	rhs );			// canon copy by const
