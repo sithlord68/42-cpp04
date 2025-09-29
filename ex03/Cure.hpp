@@ -6,14 +6,20 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:57:10 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 21:39:16 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/29 21:50:43 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
+#include <string>
+
 #ifndef	Cure_HPP
 # define Cure_HPP
+
+# ifndef CURDBG
+#  define CURDBG 1
+# endif
 
 // tout en virtual pas obligatoire/necessaire, mais best practice
 class Cure : public AMateria
@@ -32,6 +38,8 @@ class Cure : public AMateria
 		virtual AMateria*	clone( void ) const;
 
 	private:
+
+		static void			debug( const std::string str, int level );
 
 };
 

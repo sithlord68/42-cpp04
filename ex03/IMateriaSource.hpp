@@ -6,15 +6,20 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:19 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 21:51:10 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/29 21:52:41 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include "AMateria.hpp"
+
+#include <string>
 
 #ifndef IMATERIASOURCE_HPP
 # define IMATERIASOURCE_HPP
+
+# ifndef IMSDBG
+#  define IMSDBG 1
+# endif
 
 class	AMateria;
 
@@ -36,6 +41,10 @@ class	IMateriaSource
 	protected:
 
 	private:
+
+		static void			debug( const std::string str, int level );
+
+		void	IMateriaSource::debug( const std::string str, int level );
 
 };
 

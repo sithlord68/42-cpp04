@@ -3,19 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/28 11:27:32 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/29 21:50:18 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 
+#include <string>
+
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
+
+# ifndef CHADBG
+#  define CHADBG 1
+# endif
 
 class	AMateria;
 
@@ -41,9 +46,9 @@ class	Character: public ICharacter
 		Character( const Character &	rhs );			// canon copy by const
 		Character &	operator=( const Character & rhs );	// canon operator =
 
+		static void	debug( std::string str, int level );
+
 };
-
-
 
 
 #endif

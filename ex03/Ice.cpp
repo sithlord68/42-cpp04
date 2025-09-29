@@ -6,11 +6,14 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:59:23 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 22:22:12 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/29 21:50:50 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+
+#include <string>
+#include <iostream>
 
 Ice::Ice( void ): AMateria( "ice" )
 {
@@ -38,5 +41,13 @@ AMateria*	Ice::clone( void ) const
 {
 	AMateria * newMateria = new Ice();
 	newMateria->setType( this->getType() );
+	return;
+}
+
+void	Ice::debug( const std::string str, int level )
+{
+	if (!ICEDBG || ICEDBG < level )
+		return;
+	std::clog << str << std::endl;
 	return;
 }

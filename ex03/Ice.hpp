@@ -6,14 +6,20 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:00:18 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 21:48:47 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/29 21:51:04 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
+#include <string>
+
 #ifndef Ice_HPP
 # define Ice_HPP
+
+# ifndef ICEDBG
+#  define ICEDBG 1
+# endif
 
 // tout en virtual pas obligatoire/necessaire, mais best practice
 class Ice : public AMateria
@@ -32,6 +38,8 @@ class Ice : public AMateria
 		virtual AMateria*	clone( void ) const;
 
 	private:
+
+		static void			debug( const std::string str, int level );
 
 };
 

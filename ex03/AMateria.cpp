@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:42 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 22:15:49 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/29 21:49:30 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,15 @@ void	AMateria::setType( const std::string type )
 	return;
 }
 
-void AMateria::use( ICharacter& target )
+void	AMateria::use( ICharacter& target )
 {
 	std::cout << "* users " << this->getType() << " materia at " << target.getName() << std::endl;
 	return;
+}
+
+void	AMateria::debug( const std::string str, int level )
+{
+	if (!AMADBG || level < AMADBG )
+		return;
+	std::clog << str << std::endl;
 }

@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:19 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/28 11:25:16 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/09/29 21:53:16 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include "AMateria.hpp"
+
+#include <string>
 
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
+
+# ifndef MSDBG
+#  define MSDBG 1
+# endif
 
 class	AMateria;
 
@@ -36,6 +41,8 @@ class	MateriaSource
 	protected:
 
 	private:
+
+		static void			debug( const std::string str, int level );
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:48 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 22:14:09 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/29 21:49:46 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
+
+# ifndef AMADBG
+#  define AMADBG 1
+# endif
 
 // class non care il y une fonction 'pure virtual'
 
@@ -38,10 +42,12 @@ class AMateria
 
 	protected:
 
-		std::string	_type;
+		std::string			_type;
+
+	private:
+
+		static void			debug( const std::string str, int level );
+
 };
-
-
-
 
 #endif

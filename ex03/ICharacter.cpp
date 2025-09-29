@@ -6,13 +6,15 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:57:04 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/27 02:24:45 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/29 21:51:34 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "IMateriaSource.hpp"
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+
+#include <string>
 #include <iostream>
 
 ICharacter::ICharacter( void ):

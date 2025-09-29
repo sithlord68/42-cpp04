@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:36 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/26 21:57:25 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/29 21:53:03 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 
-
+#include <string>
+#include <iostream>
 
 MateriaSource::MateriaSource( void )
 {
@@ -44,4 +45,12 @@ void	MateriaSource::learnMateria( AMateria* materia )
 AMateria* MateriaSource::createMateria( std::string const & type )
 {
 
+}
+
+void	MateriaSource::debug( const std::string str, int level )
+{
+	if (!MSDBG || MSDBG < level )
+		return;
+	std::clog << str << std::endl;
+	return;
 }

@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/27 01:44:45 by yoda             ###   ########.fr       */
+/*   Updated: 2025/09/29 21:52:15 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,5 @@ class	ICharacter
 		static void	debug( std::string str, int level );
 
 };
-
-
-
 
 #endif
