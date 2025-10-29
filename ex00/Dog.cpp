@@ -42,6 +42,13 @@ void	Dog::DogDebug( std::string output, int level )
 	std::clog << output << std::endl;
 }
 
+Dog	& Dog::operator=( const Dog & dog )
+{
+	if ( this != &dog )
+		Animal::operator=( dog );
+	return *this;
+}
+
 std::ostream &	operator<<(std::ostream & ssOutput, Dog const & o )
 {
 	ssOutput << o.getType();

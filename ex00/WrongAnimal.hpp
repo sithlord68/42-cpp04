@@ -32,7 +32,7 @@ class WrongAnimal
 
 		WrongAnimal( WrongAnimal const & ct );					// canon constructeur par co;pie
 
-		WrongAnimal	& 		operator=( WrongAnimal const & rhs );		// canon operateur =
+		WrongAnimal	& 	operator=( WrongAnimal const & rhs );		// canon operateur =
 
 		std::string 	getType( void ) const;
 		void			setType( std::string type );

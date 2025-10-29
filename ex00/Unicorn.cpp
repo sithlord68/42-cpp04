@@ -42,6 +42,13 @@ void	Unicorn::UnicornDebug( std::string output, int level )
 	std::clog << output << std::endl;
 }
 
+Unicorn	&Unicorn::operator=( Unicorn const &unicorn )
+{
+	if ( this != &unicorn )
+		Animal::operator=( unicorn );
+	return *this;
+}
+
 std::ostream &	operator<<(std::ostream & ssOutput, Unicorn const & o )
 {
 	ssOutput << o.getType();

@@ -42,6 +42,13 @@ void	Cat::CatDebug( std::string output, int level )
 	std::clog << output << std::endl;
 }
 
+Cat	&Cat::operator=( Cat const &cat )
+{
+	if ( this != &cat )
+		Cat::operator=( cat );
+	return *this;
+}
+
 std::ostream &	operator<<(std::ostream & ssOutput, Cat const & o )
 {
 	ssOutput << o.getType();

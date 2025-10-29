@@ -31,6 +31,9 @@ class WrongCat: virtual public WrongAnimal
 
 		WrongCat( const WrongCat & wrongCat );	// canon constructor by copy
 		void		makeSound() const;
+
+		WrongCat	& operator=( WrongCat const & rhs );		// canon operateur =
+
 		
 	private:
 	

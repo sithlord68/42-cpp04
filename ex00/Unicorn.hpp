@@ -32,6 +32,9 @@ class Unicorn: virtual public Animal
 		Unicorn( const Unicorn & Unicorn );			// canon constructor by copy
 		void		makeSound( void ) const;
 
+		Unicorn	& 	operator=( Unicorn const & rhs );		// canon operateur =
+
+
 	private:
 	
 		static void	UnicornDebug( std::string output, int level );

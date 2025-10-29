@@ -34,10 +34,10 @@ WrongAnimal::WrongAnimal( WrongAnimal const & ct )
 	return ;
 }
 
-WrongAnimal	& WrongAnimal::operator=( WrongAnimal const & rhs )
+WrongAnimal	& WrongAnimal::operator=( WrongAnimal const & WrongAnimal )
 {
-	this->_type = rhs._type;
-	WrongAnimalDebug( "WrongAnimal " + rhs._type + " has been cloned", 9);
+	if ( this != &WrongAnimal )
+		WrongAnimal::operator=( WrongAnimal );
 	return *this;
 }
 

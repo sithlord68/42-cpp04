@@ -32,6 +32,9 @@ class Dog: virtual public Animal
 		Dog( const Dog & dog );					// canon constructor by copy
 		void		makeSound( void ) const;
 
+		Dog	& 		operator=( Dog const & rhs );		// canon operateur =
+
+
 	private:
 	
 		static void	DogDebug( std::string output, int level );

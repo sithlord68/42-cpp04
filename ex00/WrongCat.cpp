@@ -48,6 +48,13 @@ void	WrongCat::makeSound( void ) const
 	return;
 }
 
+WrongCat	&WrongCat::operator=( WrongCat const &WrongCat )
+{
+	if ( this != &WrongCat )
+		WrongAnimal::operator=( WrongCat );
+	return *this;
+}
+
 std::ostream &	operator<<(std::ostream & ssOutput, WrongCat const & o )
 {
 	ssOutput << o.getType();

@@ -32,6 +32,8 @@ class Cat: virtual public Animal
 		Cat( const Cat & cat );					// canon constructor by copy
 		void		makeSound() const;
 
+		Cat	& 		operator=( Cat const & rhs );		// canon operateur =
+
 	private:
 	
 		static void	CatDebug( std::string output, int level );

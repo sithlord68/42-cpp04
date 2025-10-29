@@ -36,7 +36,8 @@ Animal::Animal( Animal const & ct )
 
 Animal	& Animal::operator=( Animal const & rhs )
 {
-	this->_type = rhs._type;
+	if ( this != &rhs )
+		this->setType( rhs.getType() );
 	AnimalDebug( "Animal " + rhs._type + " has been cloned", 9);
 	return *this;
 }
