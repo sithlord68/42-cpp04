@@ -6,7 +6,7 @@
 /*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:35:27 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/22 17:13:54 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/10/29 19:13:36 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ Unicorn	& Unicorn::operator=( const Unicorn & unicorn )
 		Animal::operator=( unicorn );
 		Brain	*newBrain = new Brain ( *unicorn._brain );
 		delete this->_brain;
+		this->setType(unicorn.getType());
+		this->setSound(unicorn.getSound());
 		this->_brain = newBrain;
 	}
 	return *this;

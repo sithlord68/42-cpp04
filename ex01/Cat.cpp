@@ -57,7 +57,7 @@ Cat	& Cat::operator=( const Cat & cat )
 {
 	if ( this != &cat )
 	{
-		Cat::operator=( cat );
+		Animal::operator=( cat );
 		Brain	*newBrain = new Brain ( *cat._brain );
 		this->setType(cat.getType());
 		this->setSound(cat.getSound());

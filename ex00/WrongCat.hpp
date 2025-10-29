@@ -22,7 +22,7 @@
 #  define WCATDBG 1
 # endif
 
-class WrongCat: virtual public WrongAnimal
+class WrongCat: public WrongAnimal
 {
 	public:
 

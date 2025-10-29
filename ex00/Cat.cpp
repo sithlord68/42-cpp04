@@ -45,7 +45,7 @@ void	Cat::CatDebug( std::string output, int level )
 Cat	&Cat::operator=( Cat const &cat )
 {
 	if ( this != &cat )
-		Cat::operator=( cat );
+		Animal::operator=( cat );
 	return *this;
 }
 
