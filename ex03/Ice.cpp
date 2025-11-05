@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:59:23 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 18:43:13 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 20:11:34 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	IcDebug( const std::string str )
 {
 	if (!ICEDBG)
 		return;
-	std::clog << "[ice] " << str << std::endl;
+	std::clog << "[Ice] " << str << std::endl;
 	return;
 }
 

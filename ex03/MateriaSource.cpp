@@ -6,14 +6,13 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:36 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 19:28:57 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 20:13:11 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
-
 #include <string>
 #include <iostream>
 
@@ -27,17 +26,17 @@ static void	MSDebug( const std::string str )
 
 MateriaSource::MateriaSource( void )
 {
-	MSDebug("Default constructor");
+	MSDebug("default constructor");
 }
 
 MateriaSource::~MateriaSource( void )
 {
-	MSDebug("Destructor");
+	MSDebug("destructor");
 }
 
 MateriaSource::MateriaSource( const MateriaSource & rhs )
 {
-	MSDebug("Copy constructor");
+	MSDebug("copy constructor");
 	(void)rhs;
 }
 

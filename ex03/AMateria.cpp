@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:42 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 18:58:16 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 20:10:16 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,43 +20,43 @@ static void	AMDebug( const std::string str)
 {
 	if (!AMADBG)
 		return;
-	std::clog << str << std::endl;
+	std::clog << "[Amateria] " << str << std::endl;
 }
 
 AMateria::AMateria( void ): _type("")
 {
-	AMDebug("Amateria default constructor");
+	AMDebug("default constructor");
 	return;
 }
 
 AMateria::~AMateria ( void )
 {
-	AMDebug("Amateria destructor");
+	AMDebug("destructor");
 	return;
 }
 
 AMateria::AMateria( const AMateria & rhs ): _type( rhs.getType() )
 {
-	AMDebug("Amateria copy constructor");
+	AMDebug("copy constructor");
 	return;
 }
 
 AMateria &	AMateria::operator=( const AMateria & rhs )
 {
-	AMDebug("Amateria = operator " + rhs.getType());
+	AMDebug("= operator " + rhs.getType());
 //	this->_type = rhs._type;
 	return *this;
 }
 
 AMateria::AMateria( const std::string & type ): _type( type )
 {
-	AMDebug("Amateria named constructor " + type);
+	AMDebug("named constructor " + type);
 	return ;
 }
 
 std::string const & AMateria::getType( void ) const
 {
-	AMDebug("Amateria getType m.function " + this->_type);
+	AMDebug("getType m.function " + this->_type);
 	return this->_type;
 }
 

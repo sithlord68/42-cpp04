@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:57:04 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 19:37:59 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 20:20:14 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ static void	ChDebug( const std::string str )
 {
 	if (!CHADBG)
 		return;
-	std::clog << "[character] " << str << std::endl;
+	std::clog << "[Character] " << str << std::endl;
 	return;
 }
 
-std::string	Character::getName( void )
+std::string	Character::getName( void ) const
 {
 	return this->_name;
 }
@@ -202,6 +202,16 @@ void Character::equip( AMateria* materia )
 	{
 		equip->materia = materia;
 		ChDebug("Materia " + materia->getType() + " equiped on character " + this->getName());
+	}
+	else if (i < 4)
+	{
+		s_equip	*newEquip = new s_equip;
+		newEquip->materia = equip->materia;
+		if (equip)
+			equip->next = newEquip;
+		else
+			this->_equip = newEquip;
+		newEquip->next = NULL;
 	}
 	else
 		ChDebug("No Materia slot free for " + this->getName());

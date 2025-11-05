@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:57:16 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 18:50:37 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 20:11:57 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	CrDebug( const std::string str )
 {
 	if (!CURDBG)
 		return;
-	std::clog << "[cure] " << str << std::endl;
+	std::clog << "[Cure] " << str << std::endl;
 	return;
 }
 
