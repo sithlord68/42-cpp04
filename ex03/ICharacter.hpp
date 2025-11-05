@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 18:03:03 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 19:36:03 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	ICharacter
 
 		virtual ~ICharacter( void );
 
-		virtual std::string const & getName( void ) const = 0;
+		virtual std::string			getName( void ) const = 0;
 
 		virtual void				equip( AMateria* materia ) = 0;
 		virtual void				unequip( int idx ) = 0;

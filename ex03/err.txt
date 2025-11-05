@@ -1,0 +1,65 @@
+./main.cpp: In function ‘int main()’:
+./main.cpp:30:44: error: invalid new-expression of abstract class type ‘Character’
+   30 |         ICharacter* me = new Character("me");
+      |                                            ^
+In file included from ./main.cpp:18:
+./Character.hpp:35:9: note:   because the following virtual functions are pure within ‘Character’:
+   35 | class   Character: public ICharacter
+      |         ^~~~~~~~~
+./Character.hpp:43:49: note:     ‘virtual void Character::equip(AMateria*)’
+   43 |                 void                            equip( AMateria* materia ) = 0;
+      |                                                 ^~~~~
+./Character.hpp:44:49: note:     ‘virtual void Character::unequip(int)’
+   44 |                 void                            unequip( int idx ) = 0;
+      |                                                 ^~~~~~~
+./Character.hpp:45:49: note:     ‘virtual void Character::use(int, ICharacter&)’
+   45 |                 void                            use( int idx, ICharacter& target ) = 0;
+      |                                                 ^~~
+./main.cpp:38:46: error: invalid new-expression of abstract class type ‘Character’
+   38 |         ICharacter* bob = new Character("bob");
+      |                                              ^
+./Character.cpp: In member function ‘virtual void Character::equip(AMateria*)’:
+./Character.cpp:199:24: error: too many arguments to function ‘void ChDebug(std::string)’
+  199 |                 ChDebug("Materia " + materia->getType() + " equiped on character " + this->getName(), 2);
+      |                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./Character.cpp:19:17: note: declared here
+   19 | static void     ChDebug( const std::string str )
+      |                 ^~~~~~~
+./Character.cpp:202:24: error: too many arguments to function ‘void ChDebug(std::string)’
+  202 |                 ChDebug("No Materia slot free for " + this->getName(), 2);
+      |                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./Character.cpp:19:17: note: declared here
+   19 | static void     ChDebug( const std::string str )
+      |                 ^~~~~~~
+./Character.cpp: In member function ‘virtual void Character::unequip(int)’:
+./Character.cpp:233:47: error: cannot convert ‘AMateria*’ to ‘s_equip*’ in assignment
+  233 |                         this->_floor = equip->materia;
+      |                                        ~~~~~~~^~~~~~~
+      |                                               |
+      |                                               AMateria*
+./Character.cpp:235:46: error: cannot convert ‘AMateria*’ to ‘s_equip*’ in assignment
+  235 |                         floor->next = equip->materia;
+      |                                       ~~~~~~~^~~~~~~
+      |                                              |
+      |                                              AMateria*
+./Character.cpp: At global scope:
+./Character.cpp:244:6: error: no declaration matches ‘void Character::use(int, Character&)’
+  244 | void Character::use( int idx, Character& target )
+      |      ^~~~~~~~~
+In file included from ./Character.cpp:14:
+./Character.hpp:45:49: note: candidate is: ‘virtual void Character::use(int, ICharacter&)’
+   45 |                 void                            use( int idx, ICharacter& target ) = 0;
+      |                                                 ^~~
+./Character.hpp:35:9: note: ‘class Character’ defined here
+   35 | class   Character: public ICharacter
+      |         ^~~~~~~~~
+./MateriaSource.cpp: In member function ‘virtual void MateriaSource::learnMateria(AMateria*)’:
+./MateriaSource.cpp:51:48: error: unused parameter ‘materia’ [-Werror=unused-parameter]
+   51 | void    MateriaSource::learnMateria( AMateria* materia )
+      |                                      ~~~~~~~~~~^~~~~~~
+./MateriaSource.cpp: In member function ‘virtual AMateria* MateriaSource::createMateria(const std::string&)’:
+./MateriaSource.cpp:56:61: error: unused parameter ‘type’ [-Werror=unused-parameter]
+   56 | AMateria* MateriaSource::createMateria( std::string const & type )
+      |                                         ~~~~~~~~~~~~~~~~~~~~^~~~
+cc1plus: all warnings being treated as errors
+make: *** [Makefile:41: interface_and_recap] Error 1

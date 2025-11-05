@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:57:16 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 18:18:36 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 18:50:37 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,21 @@ Cure::~Cure( void )
 }
 
 Cure::Cure( const Cure & rhs ):
-	AMateria("Cure")
+	AMateria(rhs)
 {
 	CrDebug("copy constructor");
-	this->_type = rhs.getType();
 	return;
 }
 
 Cure &	Cure::operator=( const Cure & rhs )
 {
 	CrDebug("= operator");
-	if (this != *rhs)
+	if (this != &rhs)
 	{
 //		this->setType( rhs.getType() ); 
 //		type n'est pas modifiable. suppression du setType
 	}
-	return this;
+	return *this;
 }
 
 AMateria*	Cure::clone( void ) const

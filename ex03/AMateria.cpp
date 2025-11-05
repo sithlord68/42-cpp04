@@ -6,14 +6,13 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:42 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 18:16:24 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 18:58:16 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "IMateriaSource.hpp"
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
-
 #include <iostream>
 #include <string>
 
@@ -44,9 +43,9 @@ AMateria::AMateria( const AMateria & rhs ): _type( rhs.getType() )
 
 AMateria &	AMateria::operator=( const AMateria & rhs )
 {
-	AMDebug("Amaateria = operator " + rhs.getType());
-	this->_type = rhs.getType();
-	return;
+	AMDebug("Amateria = operator " + rhs.getType());
+//	this->_type = rhs._type;
+	return *this;
 }
 
 AMateria::AMateria( const std::string & type ): _type( type )

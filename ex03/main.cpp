@@ -12,6 +12,10 @@
 
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include "ICharacter.hpp"
+#include "Character.hpp"
 #include <iostream>
 #include <string>
 #include <sstream>

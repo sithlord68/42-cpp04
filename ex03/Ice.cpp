@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:59:23 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 18:18:27 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 18:43:13 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,21 @@ Ice::~Ice( void )
 }
 
 Ice::Ice( const Ice & rhs ):
-	AMateria("ice")
+	AMateria(rhs)
 {
 	IcDebug("copy constructor");
-	(void)rhs;
-// copy du nom et du reste
 	return;
 }
 
 Ice &	Ice::operator=( const Ice & rhs )
 {
 	IcDebug("= operator");
-	if (this != *rhs)
+	if (this != &rhs)
 	{
 //		this->setType( rhs.getType() ); 
 //		type n'est pas modifiable. suppression du setType
 	}
-	return this;
+	return *this;
 }
 
 AMateria*	Ice::clone( void ) const

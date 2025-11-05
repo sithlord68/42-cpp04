@@ -6,7 +6,7 @@
 #    By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/15 19:34:50 by yoda              #+#    #+#              #
-#    Updated: 2025/11/05 18:06:23 by yoda             ###   ########.fr        #
+#    Updated: 2025/11/05 18:33:05 by yoda             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC			=	main.cpp \
 				Cure.cpp \
 				AMateria.cpp \
 				Ice.cpp \
-				ICharacterSource.cpp \
+				ICharacter.cpp \
 				IMateriaSource.cpp \
 				MateriaSource.cpp
 

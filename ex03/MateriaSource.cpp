@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:36 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 17:26:30 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 19:28:57 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,25 @@ MateriaSource::~MateriaSource( void )
 MateriaSource::MateriaSource( const MateriaSource & rhs )
 {
 	MSDebug("Copy constructor");
+	(void)rhs;
 }
 
 MateriaSource &	MateriaSource::operator=( const MateriaSource & rhs )
 {
 	MSDebug("= operator");
-	if (this != rhs)
-	{
-//		this
-	}
-	return &this;
+	(void)rhs;
+	return *this;
 }
 
 void	MateriaSource::learnMateria( AMateria* materia )
 {
 	MSDebug("leanrMateria m.function");
+	(void)materia;
 }
 
-MateriaSource* MateriaSource::createMateria( std::string const & type )
+AMateria* MateriaSource::createMateria( std::string const & type )
 {
 	MSDebug("createMateria m.function");
+	(void)type;
 	return NULL;
 }

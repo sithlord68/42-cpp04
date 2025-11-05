@@ -6,13 +6,12 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 17:22:32 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 19:36:45 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
-
 #include <string>
 
 #ifndef CHARACTER_HPP
@@ -39,14 +38,17 @@ class	Character: public ICharacter
 		Character( std::string name );										// canon def const
 		virtual ~Character( void );											// canon destroyer
 
-		std::string const &				getName( void ) const;
+		std::string			getName( void ) const;
+		void				equip( AMateria* materia );
+		void				unequip( int idx );
+		void				use( int idx, ICharacter& target );
 
 	private:
 
 
-		std::string						_name;
-		s_equip							*_equip;
-		s_equip							*_floor;
+		std::string			_name;
+		s_equip				*_equip;
+		s_equip				*_floor;
 
 		// private pour empecher copie du character
 		Character( const Character &	rhs );								// canon copy by const
