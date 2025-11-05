@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/29 22:37:35 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 17:22:32 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ class	Character: public ICharacter
 		// private pour empecher copie du character
 		Character( const Character &	rhs );								// canon copy by const
 		Character &						operator=( const Character & rhs );	// canon operator =
-
-		static void	debug( std::string str, int level );
 
 };
 

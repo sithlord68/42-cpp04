@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:36 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/29 21:53:03 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 17:26:30 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,46 @@
 #include <string>
 #include <iostream>
 
+static void	MSDebug( const std::string str )
+{
+	if (!MSDBG )
+		return;
+	std::clog << "[MateriaSource] " << str << std::endl;
+	return;
+}
+
 MateriaSource::MateriaSource( void )
 {
-
+	MSDebug("Default constructor");
 }
 
 MateriaSource::~MateriaSource( void )
 {
-
+	MSDebug("Destructor");
 }
 
 MateriaSource::MateriaSource( const MateriaSource & rhs )
 {
-
+	MSDebug("Copy constructor");
 }
 
 MateriaSource &	MateriaSource::operator=( const MateriaSource & rhs )
 {
-
+	MSDebug("= operator");
+	if (this != rhs)
+	{
+//		this
+	}
+	return &this;
 }
 
 void	MateriaSource::learnMateria( AMateria* materia )
 {
-
+	MSDebug("leanrMateria m.function");
 }
 
-AMateria* MateriaSource::createMateria( std::string const & type )
+MateriaSource* MateriaSource::createMateria( std::string const & type )
 {
-
-}
-
-void	MateriaSource::debug( const std::string str, int level )
-{
-	if (!MSDBG || MSDBG < level )
-		return;
-	std::clog << str << std::endl;
-	return;
+	MSDebug("createMateria m.function");
+	return NULL;
 }

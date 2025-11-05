@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:57:10 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/29 21:50:43 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 17:20:34 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ class Cure : public AMateria
 		virtual AMateria*	clone( void ) const;
 
 	private:
-
-		static void			debug( const std::string str, int level );
 
 };
 

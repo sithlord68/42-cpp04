@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:57:16 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/29 21:50:26 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 17:31:02 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,49 @@
 #include <string>
 #include <iostream>
 
-Cure::Cure( void ): AMateria( "cure" )
+static void	CrDebug( const std::string str )
 {
+	if (!CURDBG)
+		return;
+	std::clog << "[cure] " << str << std::endl;
+	return;
+}
+
+Cure::Cure( void ):
+	AMateria( "cure" )
+{
+	CrDebug("defautl constructor");
 	return;
 }
 
 Cure::~Cure( void )
 {
+	CrDebug("destructor");
 	return;
 }
 
-Cure::Cure( const Cure & rhs ): AMateria("Cure")
+Cure::Cure( const Cure & rhs ):
+	AMateria("Cure")
 {
+	CrDebug("copy constructor");
 	this->_type = rhs.getType();
 	return;
 }
 
 Cure &	Cure::operator=( const Cure & rhs )
 {
-	this->setType( rhs.getType() );
-	return;
+	CrDebug("= operator");
+	if (this != *rhs)
+	{
+		this->setType( rhs.getType() );
+	}
+	return this;
 }
 
 AMateria*	Cure::clone( void ) const
 {
-	AMateria * newMateria = new Cure();
-	newMateria->setType( this->getType() );
-	return;
+	CrDebug("clone m.function");
+	AMateria * new = new Cure();
+	new->setType( this->getType() );
+	return	new;
 }
-
-void	Cure::debug( const std::string str, int level )
-{
-	if (!CURDBG || CURDBG < level )
-		return;
-	std::clog << str << std::endl;
-	return;
-}
-

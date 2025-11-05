@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:42 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/29 21:49:30 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 17:25:17 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,52 +17,59 @@
 #include <iostream>
 #include <string>
 
+static void	AMDebug( const std::string str)
+{
+	if (!AMADBG)
+		return;
+	std::clog << str << std::endl;
+}
+
 AMateria::AMateria( void ): _type("")
 {
+	AMDebug("Amateria default constructor");
 	return;
 }
 
 AMateria::~AMateria ( void )
 {
+	AMDebug("Amateria destructor");
 	return;
 }
 
 AMateria::AMateria( const AMateria & rhs ): _type( rhs.getType() )
 {
+	AMDebug("Amateria copy constructor");
 	return;
 }
 
 AMateria &	AMateria::operator=( const AMateria & rhs )
 {
+	AMDebug("Amaateria = operator " + rhs.getType());
 	this->_type = rhs.getType();
 	return;
 }
 
 AMateria::AMateria( const std::string & type ): _type( type )
 {
+	AMDebug("Amateria named constructor " + type);
 	return ;
 }
 
 std::string const & AMateria::getType( void ) const
 {
+	AMDebug("Amateria getType m.function " + this->_type);
 	return this->_type;
 }
 
 void	AMateria::setType( const std::string type )
 {
+	AMDebug("Amateria setType m.function " + type);
 	this->_type = type;
 	return;
 }
 
 void	AMateria::use( ICharacter& target )
 {
-	std::cout << "* users " << this->getType() << " materia at " << target.getName() << std::endl;
+	std::cout << "* uses " << this->getType() << " materia at " << target.getName() << std::endl;
 	return;
-}
-
-void	AMateria::debug( const std::string str, int level )
-{
-	if (!AMADBG || level < AMADBG )
-		return;
-	std::clog << str << std::endl;
 }

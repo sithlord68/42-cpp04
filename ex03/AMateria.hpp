@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:48 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/29 21:49:46 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 17:22:20 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ class AMateria
 		std::string			_type;
 
 	private:
-
-		static void			debug( const std::string str, int level );
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:59:23 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/29 21:50:50 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 17:31:07 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,50 @@
 #include <string>
 #include <iostream>
 
-Ice::Ice( void ): AMateria( "ice" )
+static void	IcDebug( const std::string str )
 {
+	if (!ICEDBG)
+		return;
+	std::clog << "[ice] " << str << std::endl;
+	return;
+}
+
+Ice::Ice( void ):
+	AMateria( "ice" )
+{
+	IcDebug("default constructor");
 	return;
 }
 
 Ice::~Ice( void )
 {
+	IcDebug("destructor");
 	return;
 }
 
-Ice::Ice( const Ice & rhs ): AMateria("ice")
+Ice::Ice( const Ice & rhs ):
+	AMateria("ice")
 {
+	IcDebug("copy constructor");
+	(void)rhs;
 // copy du nom et du reste
 	return;
 }
 
 Ice &	Ice::operator=( const Ice & rhs )
 {
-	this->setType( rhs.getType() );
-	return;
+	IcDebug("= operator");
+	if (this != *rhs)
+	{
+		this->setType( rhs.getType() );
+	}
+	return this;
 }
 
 AMateria*	Ice::clone( void ) const
 {
-	AMateria * newMateria = new Ice();
-	newMateria->setType( this->getType() );
-	return;
-}
-
-void	Ice::debug( const std::string str, int level )
-{
-	if (!ICEDBG || ICEDBG < level )
-		return;
-	std::clog << str << std::endl;
-	return;
+	IcDebug("clone m.function");
+	AMateria * new = new Cure();
+	new->setType( this->getType() );
+	return	new;
 }
