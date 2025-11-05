@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:48 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 17:22:20 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 18:17:05 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class AMateria
 		AMateria( std::string const & type );
 
 		std::string const & getType( void ) const;		//Returns the materia type
-		void				setType( const std::string type );
 		
 		virtual AMateria*	clone( void ) const = 0;		// pure virtual class
 
@@ -42,7 +41,7 @@ class AMateria
 
 	protected:
 
-		std::string			_type;
+		const std::string	_type;
 
 	private:
 

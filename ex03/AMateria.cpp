@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:42 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 17:25:17 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 18:16:24 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,6 @@ std::string const & AMateria::getType( void ) const
 {
 	AMDebug("Amateria getType m.function " + this->_type);
 	return this->_type;
-}
-
-void	AMateria::setType( const std::string type )
-{
-	AMDebug("Amateria setType m.function " + type);
-	this->_type = type;
-	return;
 }
 
 void	AMateria::use( ICharacter& target )

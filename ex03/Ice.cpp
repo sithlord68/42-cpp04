@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:59:23 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 17:31:07 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/05 18:18:27 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,13 @@ Ice &	Ice::operator=( const Ice & rhs )
 	IcDebug("= operator");
 	if (this != *rhs)
 	{
-		this->setType( rhs.getType() );
+//		this->setType( rhs.getType() ); 
+//		type n'est pas modifiable. suppression du setType
 	}
 	return this;
 }
 
 AMateria*	Ice::clone( void ) const
 {
-	IcDebug("clone m.function");
-	AMateria * new = new Cure();
-	new->setType( this->getType() );
-	return	new;
+	return	new Ice(*this);
 }

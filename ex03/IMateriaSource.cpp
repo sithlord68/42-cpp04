@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 18:03:03 by yoda             ###   ########.fr       */
+/*   Created: 2025/11/05 18:04:07 by yoda              #+#    #+#             */
+/*   Updated: 2025/11/05 18:04:49 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#include "IMateriaSource.hpp"
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
-
-class	AMateria;
-
-class	ICharacter
+IMateriaSource::~IMateriaSource( void )
 {
-	public:
-
-		virtual ~ICharacter( void );
-
-		virtual std::string const & getName( void ) const = 0;
-
-		virtual void				equip( AMateria* materia ) = 0;
-		virtual void				unequip( int idx ) = 0;
-		virtual void				use( int idx, ICharacter& target ) = 0;
-
-	private:
-
-};
-
-#endif
+// destructor
+}

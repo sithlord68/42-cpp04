@@ -6,17 +6,19 @@
 #    By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/15 19:34:50 by yoda              #+#    #+#              #
-#    Updated: 2025/09/26 11:51:24 by yoda             ###   ########.fr        #
+#    Updated: 2025/11/05 18:06:23 by yoda             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	interface_and_recap
 
 SRC			=	main.cpp \
-				Ice.cpp \
+				Character.cpp \
 				Cure.cpp \
 				AMateria.cpp \
-				Character.cpp \
+				Ice.cpp \
+				ICharacterSource.cpp \
+				IMateriaSource.cpp \
 				MateriaSource.cpp
 
 SRCDIR		=	./
