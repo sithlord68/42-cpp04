@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 14:35:17 by yoda              #+#    #+#             */
-/*   Updated: 2025/11/07 12:14:24 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 17:45:54 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,15 @@ MyDebug::MyDebug(std::ostream* stream = NULL, bool autoSp = true):
 		this->_iOutput = stream;
 	else
 		this->_iOutput = iOutput;
+}
+
+MyDebug::MyDebug(bool autoSp = true):
+	_nbElems( 0 ),
+	_iOutput( iOutput ),
+	_ended( false ),
+	_autoSpace( autoSp )
+{
+// autospace constructor
 }
 
 MyDebug::~MyDebug( void )

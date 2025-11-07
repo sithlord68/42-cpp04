@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:19 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/07 16:50:56 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 17:23:03 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class	IMateriaSource
 
 	private:
 
-		AMateria					*_learnedMaterias[4];
 		static const std::string	className;
 };
 

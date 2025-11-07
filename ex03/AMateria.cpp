@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:42 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/07 16:48:22 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 17:46:54 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,13 @@ AMateria::AMateria( const std::string & type ): _type( type )
 
 std::string const & AMateria::getType( void ) const
 {
-	MyDebug() << className << "getType m.function" << this->_type;
+//	MyDebug() << className << "getType m.function" << this->_type;
+//	desactive, sinon trop d'affichage, car getType est used pour les display
 	return this->_type;
 }
 
 void	AMateria::use( ICharacter& target )
 {
-	MyDisplay() << "* uses" << this->getType() << "materia at" << target.getName();
+	(void)target;
 	return;
 }

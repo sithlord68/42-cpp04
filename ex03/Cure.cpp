@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:57:16 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/07 16:49:28 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 17:17:59 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,9 @@ AMateria*	Cure::clone( void ) const
 {
 	MyDebug() << className << "clone m.function";
 	return	new Cure(*this);
+}
+
+void	Cure::use( ICharacter& target )
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

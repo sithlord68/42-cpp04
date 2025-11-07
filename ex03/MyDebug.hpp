@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 14:34:30 by yoda              #+#    #+#             */
-/*   Updated: 2025/11/07 15:42:05 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 17:43:02 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class MyDebug
 		void				setOutput( std::ostream *value );
 
 		MyDebug( std::ostream* stream, bool autoSpace );
+		MyDebug( bool autoSpace );
 
 		MyDebug &operator<<(std::string value);
 		MyDebug &operator<<(int value);

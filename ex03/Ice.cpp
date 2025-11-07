@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:59:23 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/07 16:49:21 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 17:24:24 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,9 @@ AMateria*	Ice::clone( void ) const
 {
 	MyDebug() << className << "clone m.function";
 	return	new Ice(*this);
+}
+
+void	Ice::use( ICharacter& target )
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

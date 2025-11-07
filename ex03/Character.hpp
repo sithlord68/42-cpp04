@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/07 11:07:32 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 17:58:00 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,17 @@ class	Character: public ICharacter
 		void				equip( AMateria* materia );
 		void				unequip( int idx );
 		void				use( int idx, ICharacter& target );
+		Character( const Character & rhs );								// canon copy by const
+		Character &					operator=( const Character & rhs );	// canon operator =
 
 	private:
 
 
 		std::string			_name;
-		s_equip				*_equip;
-		s_equip				*_floor;
-
-		// private pour empecher copie du character
-		Character( const Character & rhs );								// canon copy by const
-		Character &					operator=( const Character & rhs );	// canon operator =
+		AMateria*			_inventory[4];
 
 		static const std::string	className;
 
 };
-
 
 #endif

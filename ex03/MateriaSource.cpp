@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:36 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/07 16:56:08 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 18:04:44 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void MateriaSource::learnMateria( AMateria* materia )
 		}
 	}
 	// No space left
-	delete materia;
+	// delete materia;   // suppression a gerer par l'appelant
 	MyDebug() << className << "No space to learn new materia";
 }
 
