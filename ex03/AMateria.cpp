@@ -6,62 +6,61 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:42 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 20:10:16 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 16:48:22 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "IMateriaSource.hpp"
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include "MyDebug.hpp"
+#include "MyDisplay.hpp"
 #include <iostream>
 #include <string>
 
-static void	AMDebug( const std::string str)
-{
-	if (!AMADBG)
-		return;
-	std::clog << "[Amateria] " << str << std::endl;
-}
+const std::string	AMateria::className = "[AMateria]";	// class name for debug
 
 AMateria::AMateria( void ): _type("")
 {
-	AMDebug("default constructor");
+	MyDebug() << className << "default constructor";
 	return;
 }
 
 AMateria::~AMateria ( void )
 {
-	AMDebug("destructor");
+	MyDebug() << className << "destructor";
 	return;
 }
 
 AMateria::AMateria( const AMateria & rhs ): _type( rhs.getType() )
 {
-	AMDebug("copy constructor");
+	MyDebug() << className << "copy constructor";
 	return;
 }
 
 AMateria &	AMateria::operator=( const AMateria & rhs )
 {
-	AMDebug("= operator " + rhs.getType());
-//	this->_type = rhs._type;
+	MyDebug() << className << "= operator" << rhs.getType();
+	// On ne peut pas copier _type car il est const
+	// Juste pour la compatibilite, on laisse vide
+	// Les classes doivent gerer leur propre assignment
 	return *this;
 }
 
 AMateria::AMateria( const std::string & type ): _type( type )
 {
-	AMDebug("named constructor " + type);
+	MyDebug() << className << "named constructor" << type;
 	return ;
 }
 
 std::string const & AMateria::getType( void ) const
 {
-	AMDebug("getType m.function " + this->_type);
+	MyDebug() << className << "getType m.function" << this->_type;
 	return this->_type;
 }
 
 void	AMateria::use( ICharacter& target )
 {
-	std::cout << "* uses " << this->getType() << " materia at " << target.getName() << std::endl;
+	MyDisplay() << "* uses" << this->getType() << "materia at" << target.getName();
 	return;
 }

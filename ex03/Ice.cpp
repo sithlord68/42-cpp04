@@ -6,55 +6,51 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:59:23 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 20:11:34 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 16:49:21 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
-
+#include "MyDebug.hpp"
+#include "MyDisplay.hpp"
 #include <string>
 #include <iostream>
 
-static void	IcDebug( const std::string str )
-{
-	if (!ICEDBG)
-		return;
-	std::clog << "[Ice] " << str << std::endl;
-	return;
-}
+const std::string	Ice::className = "[Ice]";	// class name for debug
 
 Ice::Ice( void ):
 	AMateria( "ice" )
 {
-	IcDebug("default constructor");
+	MyDebug() << className << "default constructor";
 	return;
 }
 
 Ice::~Ice( void )
 {
-	IcDebug("destructor");
+	MyDebug() << className << "destructor";
 	return;
 }
 
 Ice::Ice( const Ice & rhs ):
 	AMateria(rhs)
 {
-	IcDebug("copy constructor");
+	MyDebug() << className << "copy constructor";
 	return;
 }
 
 Ice &	Ice::operator=( const Ice & rhs )
 {
-	IcDebug("= operator");
+	MyDebug() << className << "= operator";
 	if (this != &rhs)
 	{
-//		this->setType( rhs.getType() ); 
-//		type n'est pas modifiable. suppression du setType
+		// Appel à l'opérateur = de la classe parent
+		AMateria::operator=(rhs);
 	}
 	return *this;
 }
 
 AMateria*	Ice::clone( void ) const
 {
+	MyDebug() << className << "clone m.function";
 	return	new Ice(*this);
 }

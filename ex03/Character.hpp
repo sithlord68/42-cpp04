@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 19:36:45 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 11:07:32 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
-
-# ifndef CHADBG
-#  define CHADBG 1
-# endif
 
 class	AMateria;
 
@@ -51,8 +47,10 @@ class	Character: public ICharacter
 		s_equip				*_floor;
 
 		// private pour empecher copie du character
-		Character( const Character &	rhs );								// canon copy by const
-		Character &						operator=( const Character & rhs );	// canon operator =
+		Character( const Character & rhs );								// canon copy by const
+		Character &					operator=( const Character & rhs );	// canon operator =
+
+		static const std::string	className;
 
 };
 

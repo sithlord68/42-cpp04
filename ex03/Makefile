@@ -6,13 +6,15 @@
 #    By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/15 19:34:50 by yoda              #+#    #+#              #
-#    Updated: 2025/11/05 18:33:05 by yoda             ###   ########.fr        #
+#    Updated: 2025/11/06 20:04:56 by yoda             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	interface_and_recap
 
 SRC			=	main.cpp \
+				MyDebug.cpp \
+				MyDisplay.cpp \
 				Character.cpp \
 				Cure.cpp \
 				AMateria.cpp \
@@ -26,7 +28,7 @@ OBJDIR		=	./
 BIN			=	${NAME}
 CC			=	c++
 FLAGS		=	-Wall -Wextra -Werror -std=c++98 -Wshadow
-TFLAGS		=	${FLAGS} -g3
+TFLAGS		=	${FLAGS} -g3 -D MYDEBUG=1
 
 # Add folder to files and objects
 SRCS		:=	${addprefix ${SRCDIR}, ${SRC}}

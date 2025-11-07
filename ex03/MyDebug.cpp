@@ -1,0 +1,138 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MyDebug.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/06 14:35:17 by yoda              #+#    #+#             */
+/*   Updated: 2025/11/07 12:14:24 by yoda             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "MyDebug.hpp"
+
+// Initialisation des attributs statiques
+std::ostream*	MyDebug::iOutput = &std::clog;	// io clog
+bool 			MyDebug::autoEndl = true;		// autoEndl yes
+bool			MyDebug::autoSpace = true;		// autoSpace yes
+
+
+template<typename T>
+MyDebug classDebug(const T& obj) {
+    return MyDebug() << "[" << typeid(T).name() << "] ";
+}
+
+MyDebug::MyDebug( void ):
+	_nbElems( 0 ),
+	_ended( false ),
+	_autoSpace( true )
+{
+	// canon default constructor
+	this->_iOutput = iOutput;
+}
+
+MyDebug::MyDebug(std::ostream* stream = NULL, bool autoSp = true):
+	_nbElems( 0 ),
+	_ended( false ),
+	_autoSpace( autoSp )
+{
+	if (stream)
+		this->_iOutput = stream;
+	else
+		this->_iOutput = iOutput;
+}
+
+MyDebug::~MyDebug( void )
+{
+	// canon destructor
+	if (!MYDEBUG)
+		return;
+	if (autoEndl && !this->_ended)
+	{
+		*this->_iOutput << std::endl;
+	}
+}
+
+MyDebug::MyDebug( MyDebug &rhs)
+{
+	// canon copy constructor
+	// not used
+	(void)rhs;
+}
+
+MyDebug &	MyDebug::operator=( MyDebug &rhs )
+{
+	// canon = operator
+	// not used
+	(void)rhs;
+	return rhs;
+}
+
+void	MyDebug::setAutoSpace( bool value )
+{
+	// set auto space member function
+	autoSpace = value;
+}
+
+void	MyDebug::setAutoEndl( bool value )
+{
+	// set auto endl member function
+	autoEndl = value;
+}
+
+void	MyDebug::setOutput( std::ostream *value )
+{
+	// set output member function
+	iOutput = value;
+}
+
+MyDebug &	MyDebug::operator<<(std::string value)
+{
+	if (!MYDEBUG)
+		return *this;
+	if (this->_autoSpace && this->_nbElems++)
+		*this->_iOutput << " ";
+	*this->_iOutput << value;
+	return *this;
+}
+
+MyDebug &MyDebug::operator<<(const char* value)
+{
+	if (!MYDEBUG)
+		return *this;
+	if (this->_autoSpace && this->_nbElems++)
+		*this->_iOutput << " ";
+	*this->_iOutput << value;
+	return *this;
+}
+
+MyDebug &	MyDebug::operator<<(int value)
+{
+	if (!MYDEBUG)
+		return *this;
+	if (this->_autoSpace && this->_nbElems++)
+		*this->_iOutput << " ";
+	*this->_iOutput << value;
+	return *this;
+}
+
+MyDebug &	MyDebug::operator<<(float value)
+{
+	if (!MYDEBUG)
+		return *this;
+	if (this->_autoSpace && this->_nbElems++)
+		*this->_iOutput << " ";
+	*this->_iOutput << value;
+	return *this;
+}
+
+MyDebug &	MyDebug::operator<<(bool value)
+{
+	if (!MYDEBUG)
+		return *this;
+	if (this->_autoSpace && this->_nbElems++)
+		*this->_iOutput << " ";
+	*this->_iOutput << value;
+	return *this;
+}

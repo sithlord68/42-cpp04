@@ -6,11 +6,12 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:45:37 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 19:36:03 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 15:45:47 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
+#include "MyDebug.hpp"
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
@@ -30,6 +31,8 @@ class	ICharacter
 		virtual void				use( int idx, ICharacter& target ) = 0;
 
 	private:
+
+		static const std::string	className;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:53:48 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 18:17:05 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 16:46:56 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,12 @@
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
 
-# ifndef AMADBG
-#  define AMADBG 1
-# endif
-
 // class non care il y une fonction 'pure virtual'
 
 class AMateria
 {
 	public:
 
-		AMateria( void );								// canon default cons
 		virtual ~AMateria ( void );								// canon destructor
 
 		AMateria( const AMateria & rhs );				// canon copy by constructor
@@ -41,9 +36,12 @@ class AMateria
 
 	protected:
 
+		AMateria( void );								// canon default cons
 		const std::string	_type;
 
 	private:
+
+		static const std::string	className;
 
 };
 

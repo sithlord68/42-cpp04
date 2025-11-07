@@ -6,12 +6,12 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:23:19 by pascal            #+#    #+#             */
-/*   Updated: 2025/09/29 22:36:19 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 16:50:56 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-
+#include "MyDebug.hpp"
 #include <string>
 
 #ifndef IMATERIASOURCE_HPP
@@ -34,6 +34,8 @@ class	IMateriaSource
 
 	private:
 
+		AMateria					*_learnedMaterias[4];
+		static const std::string	className;
 };
 
 #endif

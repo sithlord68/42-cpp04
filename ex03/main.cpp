@@ -16,10 +16,13 @@
 #include "MateriaSource.hpp"
 #include "ICharacter.hpp"
 #include "Character.hpp"
+#include "MyDebug.hpp"
+#include "MyDisplay.hpp"
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <cstdlib>    // for atoi0
+
 
 int	main ( void )
 {

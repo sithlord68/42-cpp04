@@ -6,23 +6,19 @@
 /*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:57:04 by pascal            #+#    #+#             */
-/*   Updated: 2025/11/05 20:20:14 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/07 16:38:10 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "IMateriaSource.hpp"
 #include "Character.hpp"
 #include "AMateria.hpp"
+#include "MyDebug.hpp"
+#include "MyDisplay.hpp"
 #include <string>
 #include <iostream>
 
-static void	ChDebug( const std::string str )
-{
-	if (!CHADBG)
-		return;
-	std::clog << "[Character] " << str << std::endl;
-	return;
-}
+const std::string	Character::className = "[Character]";	// class name for debug
 
 std::string	Character::getName( void ) const
 {
@@ -34,7 +30,7 @@ Character::Character( const std::string name ):
 	_equip( NULL ),
 	_floor( NULL )
 {
-	ChDebug(this->getName() + " created by default constructor");
+	MyDebug() << className << this->getName() << "created by default constructor";
 	return;
 }
 
@@ -47,11 +43,11 @@ Character::~Character( void )
 		next = cur->next;
 		if (cur->materia)
 		{
-			ChDebug("Materia " + cur->materia->getType() + " deleted equiped on " + this->getName());
+			MyDebug() << className << "Materia" << cur->materia->getType() << "deleted equiped on" << this->getName();
 			delete(cur->materia);
 		}
 		delete(cur);
-		ChDebug("Equipement slot deleted on " + this->getName());
+		MyDebug() << className << "Equipement slot deleted on " << this->getName();
 		cur = next;
 	}
 	this->_equip = NULL;
@@ -61,15 +57,15 @@ Character::~Character( void )
 		next = cur->next;
 		if (cur->materia)
 		{
-			ChDebug("Materia " + cur->materia->getType() + " deleted on the flor for " + this->getName());
+			MyDebug() << className << "Materia" << cur->materia->getType() << "deleted on the floor for" << this->getName();
 			delete(cur->materia);
 		}
 		delete(cur);
-		ChDebug("Floor slot deleted for " + this->getName());
+		MyDebug() << className << "Floor slot deleted for " << this->getName();
 		cur = next;
 	}
 	this->_floor = NULL;
-	ChDebug(this->getName() + " deleted by destructor");
+	MyDebug() << className << this->getName() << "deleted by destructor";
 	return;
 }
 
@@ -78,7 +74,7 @@ Character::Character( const Character &	rhs ):
 	_equip( NULL ),
 	_floor( NULL )
 {
-	ChDebug(this->getName() + " copied by constructor");
+	MyDebug() << className << this->getName() << "copied by constructor";
 	s_equip	*cur = rhs._equip;
 	s_equip	*newEquip = NULL;
 	s_equip *mem = NULL;
@@ -94,12 +90,12 @@ Character::Character( const Character &	rhs ):
 		if (cur->materia)
 		{
 			newEquip->materia = cur->materia->clone();
-			ChDebug("Materia " + cur->materia->getType() + " cloned and equiped on " + this->getName());
+			MyDebug() << className << "Materia" << cur->materia->getType() << "cloned and equiped on" << this->getName();
 		}
 		else
 		{
 			newEquip->materia = NULL;
-			ChDebug("Materia slot empty on" + this->getName());
+			MyDebug() << className << "Materia slot empty on" << this->getName();
 		}
 		newEquip->next = NULL;
 		cur = cur->next;
@@ -118,12 +114,12 @@ Character::Character( const Character &	rhs ):
 		if (cur->materia)
 		{
 			newEquip->materia = cur->materia->clone();
-			ChDebug("Materia " + cur->materia->getType() + " cloned and deposit on floor for " + this->getName());
+			MyDebug() << className << "Materia" << cur->materia->getType() << "cloned and deposit on floor for" << this->getName();
 		}
 		else
 		{
 			newEquip->materia = NULL;
-			ChDebug("Floor slot empty for " + this->getName());
+			MyDebug() << className << "Floor slot empty for" << this->getName();
 		}
 		newEquip->next = NULL;
 		cur = cur->next;
@@ -136,7 +132,7 @@ Character &	Character::operator=( const Character & rhs )
 	this->_name = rhs.getName();
 	this->_equip = NULL;
 	this->_floor = NULL;
-	ChDebug(this->getName() + " copied by = operator");
+	MyDebug() << className << this->getName() << " copied by = operator";
 	s_equip	*cur = rhs._equip;
 	s_equip	*newEquip = NULL;
 	s_equip *mem = NULL;
@@ -152,12 +148,12 @@ Character &	Character::operator=( const Character & rhs )
 		if (cur->materia)
 		{
 			newEquip->materia = cur->materia->clone();
-			ChDebug("Materia " + cur->materia->getType() + " cloned and equiped on " + this->getName());
+			MyDebug() << className << "Materia" << cur->materia->getType() << "cloned and equiped on" << this->getName();
 		}
 		else
 		{
 			newEquip->materia = NULL;
-			ChDebug("Materia slot empty on" + this->getName());
+			MyDebug() << className << "Materia slot empty on" << this->getName();
 		}
 		newEquip->next = NULL;
 		cur = cur->next;
@@ -176,12 +172,12 @@ Character &	Character::operator=( const Character & rhs )
 		if (cur->materia)
 		{
 			newEquip->materia = cur->materia->clone();
-			ChDebug("Materia " + cur->materia->getType() + " cloned and deposit on floor for " + this->getName());
+			MyDebug() << className << "Materia" << cur->materia->getType() << "cloned and deposit on floor for" << this->getName();
 		}
 		else
 		{
 			newEquip->materia = NULL;
-			ChDebug("Floor slot empty for " + this->getName());
+			MyDebug() << className << "Floor slot empty for" << this->getName();
 		}
 		newEquip->next = NULL;
 		cur = cur->next;
@@ -192,6 +188,11 @@ Character &	Character::operator=( const Character & rhs )
 void Character::equip( AMateria* materia )
 {
 	s_equip	*equip = this->_equip;
+    if (!materia)
+    {
+        MyDebug() << className << "Cannot equip NULL materia";
+        return;
+    }
 	int		i = 0;
 	while ( i < 4 && equip && equip->materia )
 	{
@@ -201,7 +202,7 @@ void Character::equip( AMateria* materia )
 	if ( equip && !equip->materia )
 	{
 		equip->materia = materia;
-		ChDebug("Materia " + materia->getType() + " equiped on character " + this->getName());
+		MyDebug() << className << "Materia" << materia->getType() << "equiped on character" << this->getName();
 	}
 	else if (i < 4)
 	{
@@ -214,16 +215,16 @@ void Character::equip( AMateria* materia )
 		newEquip->next = NULL;
 	}
 	else
-		ChDebug("No Materia slot free for " + this->getName());
+		MyDebug() << className << "No Materia slot free for" << this->getName();
 	return;
 }
 
 void Character::unequip( int idx )
 {
-	ChDebug(this->getName() + " unequip slot request");
+	MyDebug() << className << this->getName() << "unequip slot request";
 	if ( idx < 0 || idx > 3 )
 	{
-		ChDebug("unequip slot request out of range");
+		MyDebug() << className << "unequip slot request out of range";
 		return;
 	}
 	s_equip	*equip = this->_equip;
@@ -252,19 +253,19 @@ void Character::unequip( int idx )
 		else
 			this->_floor->next = newFloor;
 		equip->next = NULL;
-		ChDebug("slot with " + equip->materia->getType() + " has been put on the floor");
+		MyDebug() << className << "slot with" << equip->materia->getType() << "has been put on the floor";
 	}
 	else
-		ChDebug("slot was already empty");
+		MyDebug() << className << "slot was already empty";
 	return;
 }
 
 void Character::use( int idx, ICharacter& target )
 {
-	ChDebug(this->getName() + " use slot request");
+	MyDebug() << className << this->getName() << "use slot request";
 	if ( idx < 0 || idx > 3 )
 	{
-		ChDebug("use slot request out of range");
+		MyDebug() << className << "use slot request out of range";
 		return;
 	}
 	s_equip	*equip = this->_equip;
@@ -284,6 +285,6 @@ void Character::use( int idx, ICharacter& target )
 			std::cout << "* used un unknown type of materia (" << equip->materia->getType() << ") on " << target.getName() << " *" << std::endl;
 	}
 	else
-		ChDebug("slot was already empty");
+		MyDebug() << className << "slot was already empty";
 	return;
 }
