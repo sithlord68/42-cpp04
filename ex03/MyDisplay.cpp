@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MyDisplay.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 14:35:17 by yoda              #+#    #+#             */
-/*   Updated: 2025/11/07 17:14:00 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/08 16:38:47 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ MyDisplay::MyDisplay( void ):
 	this->_iOutput = iOutput;
 }
 
-MyDisplay::MyDisplay(std::ostream* stream = NULL, bool autoSp = true):
+MyDisplay::MyDisplay(std::ostream* stream, bool autoSp):
 	_nbElems( 0 ),
 	_ended( false ),
 	_autoSpace( autoSp )

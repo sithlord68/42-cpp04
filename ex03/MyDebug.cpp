@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MyDebug.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 14:35:17 by yoda              #+#    #+#             */
-/*   Updated: 2025/11/07 17:45:54 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/08 16:38:08 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ std::ostream*	MyDebug::iOutput = &std::clog;	// io clog
 bool 			MyDebug::autoEndl = true;		// autoEndl yes
 bool			MyDebug::autoSpace = true;		// autoSpace yes
 
-
+/*
 template<typename T>
 MyDebug classDebug(const T& obj) {
     return MyDebug() << "[" << typeid(T).name() << "] ";
 }
+*/
 
 MyDebug::MyDebug( void ):
 	_nbElems( 0 ),
@@ -32,7 +33,7 @@ MyDebug::MyDebug( void ):
 	this->_iOutput = iOutput;
 }
 
-MyDebug::MyDebug(std::ostream* stream = NULL, bool autoSp = true):
+MyDebug::MyDebug(std::ostream* stream, bool autoSp):
 	_nbElems( 0 ),
 	_ended( false ),
 	_autoSpace( autoSp )
@@ -43,7 +44,7 @@ MyDebug::MyDebug(std::ostream* stream = NULL, bool autoSp = true):
 		this->_iOutput = iOutput;
 }
 
-MyDebug::MyDebug(bool autoSp = true):
+MyDebug::MyDebug(bool autoSp):
 	_nbElems( 0 ),
 	_iOutput( iOutput ),
 	_ended( false ),

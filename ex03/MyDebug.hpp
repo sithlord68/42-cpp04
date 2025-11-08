@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MyDebug.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 14:34:30 by yoda              #+#    #+#             */
-/*   Updated: 2025/11/07 17:43:02 by yoda             ###   ########.fr       */
+/*   Updated: 2025/11/08 16:35:39 by pjolidon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,21 @@ class MyDebug
 		MyDebug &operator<<(std::ostream &value);
 		MyDebug &operator<<(const char* value);
 
+	private:
+
+		int					_nbElems;
+		std::ostream		*_iOutput;
+		bool				_ended;
+		bool				_autoSpace;
+		static bool			autoEndl;
+		static bool			autoSpace;
+		static std::ostream	*iOutput;
+
+};
+
+#endif
+
+/*
 		MyDebug& withContext(const std::string& context) {
 			if (_nbElems == 0) {
 				*_iOutput << "[" << context << "] ";
@@ -65,17 +80,4 @@ class MyDebug
 			MyDebug debug;
 			return debug.withContext(typeid(T).name());
 		}
-
-	private:
-
-		int					_nbElems;
-		std::ostream		*_iOutput;
-		bool				_ended;
-		bool				_autoSpace;
-		static bool			autoEndl;
-		static bool			autoSpace;
-		static std::ostream	*iOutput;
-
-};
-
-#endif
+*/
