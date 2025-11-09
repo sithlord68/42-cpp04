@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:35:27 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/22 17:12:30 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:32:43 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ Cat	& Cat::operator=( const Cat & cat )
 {
 	if ( this != &cat )
 	{
-		Cat::operator=( cat );
 		Brain	*newBrain = new Brain ( *cat._brain );
 		this->setType(cat.getType());
 		this->setSound(cat.getSound());

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjolidon <pjolidon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoda <yoda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 14:35:27 by pjolidon          #+#    #+#             */
-/*   Updated: 2025/09/22 17:14:24 by pjolidon         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:32:25 by yoda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ Dog	& Dog::operator=( const Dog & dog )
 {
 	if ( this != &dog )
 	{
-		Animal::operator=( dog );
 		Brain	*newBrain = new Brain ( *dog._brain );
 		this->setType(dog.getType());
 		this->setSound(dog.getSound());
